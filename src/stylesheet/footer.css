@@ -113,6 +113,8 @@ footer {margin-top: 300px;
 
 /* Media query to show social icons on tablets and mobile devices */
 @media only screen and (max-width: 768px) {
+  .footer2{
+   margin-right: 0px;}
   /* Social icons styling */
 .social-icons-container {
   display:none; /* Initially hide the container */
