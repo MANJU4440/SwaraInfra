@@ -85,6 +85,8 @@ h1 span {
 
 /* Media query for tablets and larger */
 @media screen and (max-width: 768px) {
+  .body{
+    margin-left:-20px;}
   .contentHome { padding-right: 40px;
       flex-direction: column; /* Stack items vertically on smaller screens */
   }
