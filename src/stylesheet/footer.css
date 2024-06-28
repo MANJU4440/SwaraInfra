@@ -132,4 +132,8 @@ footer {margin-top: 300px;
   width: 35px; /* Adjust the size of the icons as needed */
   height: 30px;
 }
+.body{
+  margin-right: -40px;
+  padding-left: 40px;
+}
 }
