@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/SwaraInfra/static/css/main.74f88161.css",
+    "main.css": "/SwaraInfra/static/css/main.ed321c29.css",
     "main.js": "/SwaraInfra/static/js/main.4406fb7a.js",
     "static/js/453.7923ec2a.chunk.js": "/SwaraInfra/static/js/453.7923ec2a.chunk.js",
     "static/media/abus.jpg": "/SwaraInfra/static/media/abus.7072e18ea562ce36f1db.jpg",
@@ -26,12 +26,12 @@
     "static/media/Kajaria-removebg-preview.png": "/SwaraInfra/static/media/Kajaria-removebg-preview.f92111de18baf73b88eb.png",
     "static/media/list-solid (2).svg": "/SwaraInfra/static/media/list-solid (2).c75b1157185db0afc92c3d751e3dc0a4.svg",
     "index.html": "/SwaraInfra/index.html",
-    "main.74f88161.css.map": "/SwaraInfra/static/css/main.74f88161.css.map",
+    "main.ed321c29.css.map": "/SwaraInfra/static/css/main.ed321c29.css.map",
     "main.4406fb7a.js.map": "/SwaraInfra/static/js/main.4406fb7a.js.map",
     "453.7923ec2a.chunk.js.map": "/SwaraInfra/static/js/453.7923ec2a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.74f88161.css",
+    "static/css/main.ed321c29.css",
     "static/js/main.4406fb7a.js"
   ]
 }
