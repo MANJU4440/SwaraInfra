@@ -89,10 +89,6 @@ h1 span {
       flex-direction: column; /* Stack items vertically on smaller screens */
       
   }
-  .body{
-    margin-right: -40px;
-    padding-left: 40px;
-  }
   .container h1{
     font-size: 20px;
     font-weight: 600;

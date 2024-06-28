@@ -60,7 +60,7 @@ padding-right: 70px;
       margin: 10px 0;
   }
   .footer2{
-   margin-right: -10px;
+   margin-right: -40px;
    margin-left: -10px;
   }  
 }
@@ -131,9 +131,5 @@ footer {margin-top: 300px;
 .socials-icons a img {
   width: 35px; /* Adjust the size of the icons as needed */
   height: 30px;
-}
-.body{
-  margin-right: -40px;
-  padding-left: 40px;
 }
 }
