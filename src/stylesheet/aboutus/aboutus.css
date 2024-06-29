@@ -12,6 +12,7 @@ body {
   font-family: Arial, sans-serif;
   overflow-x: hidden;
 }
+
 .Home_brands {
   display: flex;
   justify-content: center;
@@ -621,7 +622,7 @@ font-weight: 800;
           font-weight: 700;
       }
   }
-  @media (max-width: 480px) {
+  @media (max-width: 420px) {
       .Home_brands {
           padding: 10px 20px;
       }

@@ -14,7 +14,7 @@ import ourvision from '../assets/aboutus/ourvision-icon.png';
 import features from '../assets/aboutus/features-icon.png';
 function AboutUs() {
   return (
-    <div>
+    <div className="boddy"> 
     <section id="home-banner">
         <img src={aboutusimg} alt="homeimage"/>
         <h1>Welcome to <span>SWARA INFRA</span></h1>
