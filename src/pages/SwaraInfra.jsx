@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import '../stylesheet/construction/construction.css'; // Ensure to create and style the corresponding CSS file
-// import axios from 'axios';
+import '../stylesheet/construction/construction.css';
 
 function SwaraInfra() {
   const [activeTab, setActiveTab] = useState('completed');
   const [completedProjects, setCompletedProjects] = useState([]);
   const [ongoingProjects, setOngoingProjects] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (activeTab === 'completed') {
@@ -17,29 +17,37 @@ function SwaraInfra() {
 
   const fetchCompletedProjects = async () => {
     try {
-      const response = await fetch('https://api.example.com/completed-projects');
-      setCompletedProjects(response.data);
+      const response = await fetch('/completed');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setCompletedProjects(data);
     } catch (error) {
       console.error('Error fetching completed projects', error);
+      setError('Failed to fetch completed projects');
     }
   };
 
   const fetchOngoingProjects = async () => {
     try {
-      const response = await fetch('https://api.example.com/ongoing-projects');
-      setOngoingProjects(response.data);
+      const response = await fetch('/ongoing');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setOngoingProjects(data);
     } catch (error) {
       console.error('Error fetching ongoing projects', error);
+      setError('Failed to fetch ongoing projects');
     }
   };
 
   const showContent = (tab) => {
     setActiveTab(tab);
+    setError(null);
   };
 
-  document.addEventListener('DOMContentLoaded', function() {
-    showContent('completed'); // Default to show completed content
-});
   return (
     <div className="container1">
       <h2>VIEW <span>CONSTRUCTION</span></h2>
@@ -64,6 +72,8 @@ function SwaraInfra() {
           </span>
         </div>
 
+        {error && <div className="error">{error}</div>}
+
         {activeTab === 'completed' && (
           <div id="completed-content" className="content active">
             <section id="properties">
@@ -71,14 +81,14 @@ function SwaraInfra() {
                 <div className="property" key={index}>
                   <img src={project.image} alt={`Property ${index + 1}`} />
                   <div className="property1">
-                    <div className="deatils">
+                    <div className="details">
                       <h3>{project.title}</h3>
                       <div className="containerConstruction">
                         <div className="vertical-list">
                           <ul className="horizontal-content">
                             <img src="Shutterstock_1411080749-removebg-preview.png" alt="Location" />
                             <li>Location <br />{project.location}</li>
-                            <img src="layer-solid-24.png" alt="Floors" className="leyarimage" />
+                            <img src="layer-solid-24.png" alt="Floors" className="layerimage" />
                             <li>Floors <br />{project.floors}</li>
                           </ul>
                           <ul className="horizontal-content">
@@ -105,14 +115,14 @@ function SwaraInfra() {
                 <div className="property" key={index}>
                   <img src={project.image} alt={`Property ${index + 1}`} />
                   <div className="property1">
-                    <div className="deatils">
+                    <div className="details">
                       <h3>{project.title}</h3>
                       <div className="container">
                         <div className="vertical-list">
                           <ul className="horizontal-content">
                             <img src="Shutterstock_1411080749-removebg-preview.png" alt="Location" />
                             <li>Location <br />{project.location}</li>
-                            <img src="layer-solid-24.png" alt="Floors" className="leyarimage" />
+                            <img src="layer-solid-24.png" alt="Floors" className="layerimage" />
                             <li>Floors <br />{project.floors}</li>
                           </ul>
                           <ul className="horizontal-content">
@@ -134,6 +144,6 @@ function SwaraInfra() {
       </div>
     </div>
   );
-};
+}
 
 export default SwaraInfra;
