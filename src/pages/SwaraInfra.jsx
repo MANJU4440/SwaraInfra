@@ -5,7 +5,6 @@ function SwaraInfra() {
   const [activeTab, setActiveTab] = useState('completed');
   const [completedProjects, setCompletedProjects] = useState([]);
   const [ongoingProjects, setOngoingProjects] = useState([]);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (activeTab === 'completed') {
@@ -17,36 +16,34 @@ function SwaraInfra() {
 
   const fetchCompletedProjects = async () => {
     try {
-      const response = await fetch('/completed');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+      const response = await fetch('https://project-akshay.onrender.com/completed/');
       const data = await response.json();
-      setCompletedProjects(data);
+      const projects = data.data.map(item => item.attributes);
+      setCompletedProjects(projects);
     } catch (error) {
       console.error('Error fetching completed projects', error);
-      setError('Failed to fetch completed projects');
     }
   };
-
+  
   const fetchOngoingProjects = async () => {
     try {
-      const response = await fetch('/ongoing');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+      const response = await fetch('https://project-akshay.onrender.com/ongoing/');
       const data = await response.json();
-      setOngoingProjects(data);
+      const projects = data.data.map(item => item.attributes);
+      setOngoingProjects(projects);
     } catch (error) {
       console.error('Error fetching ongoing projects', error);
-      setError('Failed to fetch ongoing projects');
     }
   };
+  
 
   const showContent = (tab) => {
     setActiveTab(tab);
-    setError(null);
   };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    showContent('completed');
+  });
 
   return (
     <div className="container1">
@@ -72,30 +69,21 @@ function SwaraInfra() {
           </span>
         </div>
 
-        {error && <div className="error">{error}</div>}
-
         {activeTab === 'completed' && (
           <div id="completed-content" className="content active">
             <section id="properties">
               {completedProjects.map((project, index) => (
                 <div className="property" key={index}>
-                  <img src={project.image} alt={`Property ${index + 1}`} />
+                  <img src={project.image_url} alt={`Property ${index + 1}`} />
                   <div className="property1">
                     <div className="details">
-                      <h3>{project.title}</h3>
+                    
                       <div className="containerConstruction">
                         <div className="vertical-list">
                           <ul className="horizontal-content">
-                            <img src="Shutterstock_1411080749-removebg-preview.png" alt="Location" />
+                            {/* <img src="Shutterstock_1411080749-removebg-preview.png" alt="" /> */}
                             <li>Location <br />{project.location}</li>
-                            <img src="layer-solid-24.png" alt="Floors" className="layerimage" />
-                            <li>Floors <br />{project.floors}</li>
-                          </ul>
-                          <ul className="horizontal-content">
-                            <img src="total-removebg-preview.png" alt="Total Area" className="totalimage" />
-                            <li>Total Area <br />{project.area} ft</li>
-                            <img src="purchase-tag-alt-solid-24.png" alt="Cost" className="tagimage" />
-                            <li>Cost <br />{project.cost}</li>
+                            
                           </ul>
                         </div>
                       </div>
@@ -113,24 +101,16 @@ function SwaraInfra() {
             <section id="properties">
               {ongoingProjects.map((project, index) => (
                 <div className="property" key={index}>
-                  <img src={project.image} alt={`Property ${index + 1}`} />
+                  <img src={project.image_url} alt={`Property ${index + 1}`} />
                   <div className="property1">
                     <div className="details">
-                      <h3>{project.title}</h3>
+                      
                       <div className="container">
                         <div className="vertical-list">
                           <ul className="horizontal-content">
-                            <img src="Shutterstock_1411080749-removebg-preview.png" alt="Location" />
+                            {/* <img src="Shutterstock_1411080749-removebg-preview.png" alt="" /> */}
                             <li>Location <br />{project.location}</li>
-                            <img src="layer-solid-24.png" alt="Floors" className="layerimage" />
-                            <li>Floors <br />{project.floors}</li>
-                          </ul>
-                          <ul className="horizontal-content">
-                            <img src="total-removebg-preview.png" alt="Total Area" className="totalimage" />
-                            <li>Total Area <br />{project.area} ft</li>
-                            <img src="purchase-tag-alt-solid-24.png" alt="Cost" className="tagimage" />
-                            <li>Cost <br />{project.cost}</li>
-                          </ul>
+                            </ul>
                         </div>
                       </div>
                     </div>
@@ -144,6 +124,6 @@ function SwaraInfra() {
       </div>
     </div>
   );
-}
+};
 
 export default SwaraInfra;
