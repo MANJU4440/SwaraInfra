@@ -6,9 +6,8 @@ padding-left: 70px;
 padding-right: 70px;
   flex-wrap: wrap;
   color: white;
-  /* margin-left: -50px;
-  margin-right: -50px; */
-  width: 100%;
+  margin-left: -50px;
+  margin-right: -50px;
 }
 .footer2{
   margin-left: -50px;
