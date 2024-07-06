@@ -1,6 +1,5 @@
 // Footer.js
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../stylesheet/footer.css';
 // import '../stylesheet/header.css';
 import WhatsappIcon from '../assets/whatsappicon.png';
@@ -31,11 +30,11 @@ function Footer () {
           <div className="footer-section">
             <h3>Menu</h3>
             <ul>
-              <li><Link to="/aboutus" style={{color:'white'}} >About Us</Link></li>
-              {/* <li>Why Choose Us for Your Dream Home</li> */}
-              <li><Link to="/SwaraInfra" style={{color:'white'}}>Projects</Link></li>
-              {/* <li>Careers</li> */}
-              <li><Link to="/contact" style={{color:'white'}} >Contact Us</Link></li>
+              <li>About Us</li>
+              <li>Why Choose Us for Your Dream Home</li>
+              <li>Ongoing Projects</li>
+              <li>Careers</li>
+              <li>Contact Us</li>
             </ul>
           </div>
           <div className="footer-section">
