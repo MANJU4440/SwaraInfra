@@ -25,10 +25,7 @@ function AboutUs() {
                 <h2>About <span>Us</span></h2>
                 <p id="first">(BUILDING AS PER <span>YOUR CONVENIENCE</span>...)</p>
                 <p id="next">
-                    SwaraInfra is a one-stop solution for all your home construction needs, providing the most
-                    comprehensive, turnkey, end-to-end services and solutions for all your home building requirements
-                    and desires. If you own land, choose us to convert your dream home construction into reality by
-                    involving yourselves with our civil experts.
+                Swarainfra turns that dream into reality. We're your one-stop shop for everything home construction. From expert civil engineers to a team that oversees every detail, we handle it all. Consider us your partner, guiding you through the process and ensuring your vision comes to life.
                 </p>
             </div>
             <img src={abus} alt="home construction image" />
